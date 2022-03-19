@@ -1,0 +1,260 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXFileReference section */
+		85830ECA27E6764000A1F523 /* make.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = make.sh; sourceTree = "<group>"; };
+		85B7A44F27E510220052FD85 /* weenix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = weenix; sourceTree = "<group>"; };
+		85B7A45027E510220052FD85 /* fsmaker */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = fsmaker; sourceTree = "<group>"; };
+		85B7A45127E510220052FD85 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		85B7A45227E510220052FD85 /* Global.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Global.mk; sourceTree = "<group>"; };
+		85B7A45327E510220052FD85 /* python */ = {isa = PBXFileReference; lastKnownFileType = folder; path = python; sourceTree = "<group>"; };
+		85B7A45427E510220052FD85 /* tools */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tools; sourceTree = "<group>"; };
+		85B7A45527E510220052FD85 /* memcheck.gdb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = memcheck.gdb; sourceTree = "<group>"; };
+		85B7A45627E510220052FD85 /* README.gdb.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.gdb.md; sourceTree = "<group>"; };
+		85B7A45727E510220052FD85 /* user */ = {isa = PBXFileReference; lastKnownFileType = folder; path = user; sourceTree = "<group>"; };
+		85B7A45827E510220052FD85 /* Config.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Config.mk; sourceTree = "<group>"; };
+		85B7A45927E510220052FD85 /* kernel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = kernel; sourceTree = "<group>"; };
+		85B7A45A27E510220052FD85 /* Vagrantfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vagrantfile; sourceTree = "<group>"; };
+		85B7A45B27E510220052FD85 /* weenix-scripts.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "weenix-scripts.txt"; sourceTree = "<group>"; };
+		85B7A45C27E510220052FD85 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		85B7A45D27E510220052FD85 /* preinit.gdb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = preinit.gdb; sourceTree = "<group>"; };
+		85B7A45E27E510220052FD85 /* init.gdb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = init.gdb; sourceTree = "<group>"; };
+		85B7A45F27E510220052FD85 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		85B7A44427E50FD20052FD85 = {
+			isa = PBXGroup;
+			children = (
+				85830ECA27E6764000A1F523 /* make.sh */,
+				85B7A45127E510220052FD85 /* CMakeLists.txt */,
+				85B7A45827E510220052FD85 /* Config.mk */,
+				85B7A45027E510220052FD85 /* fsmaker */,
+				85B7A45227E510220052FD85 /* Global.mk */,
+				85B7A45E27E510220052FD85 /* init.gdb */,
+				85B7A45927E510220052FD85 /* kernel */,
+				85B7A45F27E510220052FD85 /* Makefile */,
+				85B7A45527E510220052FD85 /* memcheck.gdb */,
+				85B7A45D27E510220052FD85 /* preinit.gdb */,
+				85B7A45327E510220052FD85 /* python */,
+				85B7A45627E510220052FD85 /* README.gdb.md */,
+				85B7A45C27E510220052FD85 /* README.md */,
+				85B7A45427E510220052FD85 /* tools */,
+				85B7A45727E510220052FD85 /* user */,
+				85B7A45A27E510220052FD85 /* Vagrantfile */,
+				85B7A44F27E510220052FD85 /* weenix */,
+				85B7A45B27E510220052FD85 /* weenix-scripts.txt */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		85B7A44927E50FD20052FD85 /* weenix */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "run -i --rm --name cs2670-devenv --platform linux/arm64 --privileged --cap-add=SYS_PTRACE --cap-add=NET_ADMIN --security-opt seccomp=unconfined -v $(PROJECT_DIR):/home/cs2670-user -w /home/cs2670-user --net=host -e DISPLAY=host.docker.internal:0 --volume=$(HOME)/.Xauthority:/root/.Xauthority:rw cs2670:arm64 ./make.sh $(ACTION)";
+			buildConfigurationList = 85B7A44C27E50FD20052FD85 /* Build configuration list for PBXLegacyTarget "weenix" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/local/bin/docker;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = weenix;
+			passBuildSettingsInEnvironment = 1;
+			productName = weenix;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		85B7A44527E50FD20052FD85 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					85B7A44927E50FD20052FD85 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = 85B7A44827E50FD20052FD85 /* Build configuration list for PBXProject "weenix" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 85B7A44427E50FD20052FD85;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				85B7A44927E50FD20052FD85 /* weenix */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		85B7A44A27E50FD20052FD85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		85B7A44B27E50FD20052FD85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+			};
+			name = Release;
+		};
+		85B7A44D27E50FD20052FD85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PATH = "$PROJECT_DIR/symlinks:$PATH";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		85B7A44E27E50FD20052FD85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PATH = "$PROJECT_DIR/symlinks:$PATH";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85B7A44827E50FD20052FD85 /* Build configuration list for PBXProject "weenix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85B7A44A27E50FD20052FD85 /* Debug */,
+				85B7A44B27E50FD20052FD85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85B7A44C27E50FD20052FD85 /* Build configuration list for PBXLegacyTarget "weenix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85B7A44D27E50FD20052FD85 /* Debug */,
+				85B7A44E27E50FD20052FD85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 85B7A44527E50FD20052FD85 /* Project object */;
+}
